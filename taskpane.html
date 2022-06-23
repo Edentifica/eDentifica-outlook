@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <p>This add-in will insert the text 'Hello world!' in a new message. ${mail}</p>
+    <p>This add-in will insert the text 'Hello world!' in a new message. <span id="texto"> </span></p>
     <button id="helloButton">Decir Hola</button>
 </body>
 
@@ -19,6 +19,7 @@
             mail = Office.context.mailbox.item.from.emailAddress;
             console.log(mail);
            document.getElementById("helloButton").onclick = sayHello;
+           document.getElementById("texto").innerText = mail;
     //     }
     // });
 
