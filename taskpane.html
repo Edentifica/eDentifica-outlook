@@ -16,6 +16,8 @@
 
     // Office.onReady((info) => {
     //     if (info.host === Office.HostType.Outlook) {
+            mail = Office.context.mailbox.item.from.emailAddress;
+            console.log(mail);
            document.getElementById("helloButton").onclick = sayHello;
     //     }
     // });
@@ -45,8 +47,7 @@
     }
     
     async function sayHello() {
-        mail = Office.context.mailbox.item.from.emailAddress;
-        console.log(mail);
+        
         content = await generateText();
         console.log(content['url']);
         Office.context.mailbox.item.body.setAsync(
