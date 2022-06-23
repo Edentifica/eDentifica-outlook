@@ -48,6 +48,7 @@
         content = await generateText();
         console.log(content['url']);
         console.log(Office.context.mailbox.item.from.emailAddress);
+        // mail = 
         Office.context.mailbox.item.body.setAsync(
             content,
             {
