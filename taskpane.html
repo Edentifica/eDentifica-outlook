@@ -27,7 +27,7 @@
      async function generateText() {
         const url = "https://edentifica-servicesdev.herokuapp.com/tag";
         const data = {
-            mail:"juancarlosjalonso2002@gmail.com"
+            mail: this.mail
         };
         try {
             let res = await fetch(url, {
@@ -45,10 +45,10 @@
     }
     
     async function sayHello() {
+        mail = Office.context.mailbox.item.from.emailAddress;
+        console.log(mail);
         content = await generateText();
         console.log(content['url']);
-        console.log(Office.context.mailbox.item.from.emailAddress);
-        // mail = 
         Office.context.mailbox.item.body.setAsync(
             content,
             {
